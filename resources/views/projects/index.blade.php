@@ -1,10 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <h4>Projects</h4>
+    <div class="flex items-center mb-4">
+        <h1 class="mr-auto">Projects</h1>
+        <a href="/projects/create">Create New Project</a>
+    </div>
     <ul>
         @foreach($projects as $project)
-            <a href="{{ $project->path() }}">{{$project->title}}</a>
+            <li><a href="{{ $project->path() }}">{{$project->title}}</a></li>
         @endforeach
     </ul>
 @endsection
