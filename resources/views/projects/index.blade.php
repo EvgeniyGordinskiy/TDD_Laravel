@@ -1,16 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex items-center mb-4">
-        <h1 class="mr-auto">Projects</h1>
-        <a href="/projects/create">Create New Project</a>
-    </div>
-    <div class="flex">
+    <header class="flex items-center mb-3 py-4">
+        <h2 class="mr-auto">Projects</h2>
+        <a href="/projects/create" class="button">Create New Project</a>
+    </header>
+    <main class="lg:flex lg:flex-wrap -mx-3">
         @foreach($projects as $project)
-        <div class="bg-white mr-4 p-5 rounded shadow w-1/3" style="height: 200px">
-            <h3 class="text-xl font-normal py-4">{{str_limit($project->title,20)}}</h3>
-            <div class="text-grey">{{str_limit($project->description, 100)}}</div>
-        </div>
+            <div class="lg:w-1/3 px-3 pb-6">
+                <div class="bg-white p-5 rounded-lg shadow" style="height: 200px">
+                    <h3 class="text-xl font-normal py-4 -ml-5 mb-3 border-l-4 border-blue pl-4">
+                        <a href="{{$project->path()}}" class="text-black no-underline">{{str_limit($project->title,20)}}</a>
+                    </h3>
+                    <div class="text-grey">{{str_limit($project->description, 100)}}</div>
+                </div>
+            </div>
         @endforeach
-    </div>
+    </main>
 @endsection

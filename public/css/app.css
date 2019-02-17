@@ -566,6 +566,18 @@ table {
  * @import "components/forms";
  */
 
+.button {
+  background-color: #3490dc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: .5rem;
+  font-size: .875rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
